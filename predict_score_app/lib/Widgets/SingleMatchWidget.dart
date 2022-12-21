@@ -49,13 +49,12 @@ class SingleMatchWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       ///Countries and Scores
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          ///Countries
-                          Container(
-                            color: Colors.red,
-                            child: Column(
+                      IntrinsicHeight(
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            ///Countries
+                            Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 ///First Country
@@ -100,12 +99,9 @@ class SingleMatchWidget extends StatelessWidget {
                                 ),
                               ],
                             ),
-                          ),
 
-                          ///Scores
-                          Expanded(
-                            child: Container(
-                              color: Colors.blueGrey,
+                            ///Scores
+                            Expanded(
                               child: Column(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -117,9 +113,9 @@ class SingleMatchWidget extends StatelessWidget {
                                     const Text("1", style: kSFMedium21)
                                 ],
                               ),
-                            ),
-                          )
-                        ],
+                            )
+                          ],
+                        ),
                       ),
                       const SizedBox(height: 24),
                       Container(height: 1, color: kBorderBlack),
