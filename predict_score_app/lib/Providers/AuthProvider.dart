@@ -1,16 +1,15 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class AuthProvider extends ChangeNotifier {
   bool showSignInPassword = false;
 
-  final FirebaseAuth auth = FirebaseAuth.instance;
-  get isLoggedIn => auth.currentUser != null;
-
-  get userId => auth.currentUser?.uid;
-
-  get isEmailLoggedIn =>
-      auth.currentUser?.providerData.first.providerId == "password";
+  //final FirebaseAuth auth = FirebaseAuth.instance;
+  // get isLoggedIn => auth.currentUser != null;
+  //
+  // get userId => auth.currentUser?.uid;
+  //
+  // get isEmailLoggedIn =>
+  //     auth.currentUser?.providerData.first.providerId == "password";
 
   ///
   final signInEmailController = TextEditingController();
@@ -40,13 +39,6 @@ class AuthProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  focusChange({
-    required FocusNode focus,
-    required BuildContext context,
-  }) {
-    FocusScope.of(context).requestFocus(focus);
-    notifyListeners();
-  }
 
   resetAll() {
     currentPasswordController.clear();
@@ -55,5 +47,5 @@ class AuthProvider extends ChangeNotifier {
     forgotEmailController.clear();
   }
 
-  signOut() async => await auth.signOut();
+  //signOut() async => await auth.signOut();
 }

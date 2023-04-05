@@ -55,6 +55,7 @@ class MyApp extends StatelessWidget {
                 },
                 title: 'Score Predictor',
                 initialRoute: TabsScaffold.id,
+                navigatorObservers: <NavigatorObserver>[observer],
               );
             }
             return Container(color: kBlack);

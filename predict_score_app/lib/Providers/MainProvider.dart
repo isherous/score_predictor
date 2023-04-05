@@ -13,9 +13,12 @@ class MainProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  int imagesIndex = 0;
-  changeImagesIndex(int i) {
-    imagesIndex = i;
+  focusChange({
+    required FocusNode focus,
+    required BuildContext context,
+  }) {
+    FocusScope.of(context).requestFocus(focus);
     notifyListeners();
   }
+
 }

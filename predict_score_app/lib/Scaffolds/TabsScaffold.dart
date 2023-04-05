@@ -14,7 +14,7 @@ class TabsScaffold extends StatelessWidget {
 
   final _names = ["Upcoming Games", "Predictions", "Profile"];
 
-  final _tabs = [
+  final _tabs = const [
     HomeTab(),
     PredictionsTab(),
     ProfileTab(),
@@ -79,7 +79,7 @@ class TabsScaffold extends StatelessWidget {
                         kTransparent.withOpacity(bottomBarIndex == 0 ? 1 : 0),
                   ),
                 ),
-                child: Icon(Icons.home, color: kWhite, size: 30),
+                child: const Icon(Icons.home, color: kWhite, size: 30),
               ),
             ),
           ),
@@ -107,7 +107,7 @@ class TabsScaffold extends StatelessWidget {
                         kTransparent.withOpacity(bottomBarIndex == 1 ? 1 : 0),
                   ),
                 ),
-                child: Icon(Icons.monetization_on_outlined,
+                child: const Icon(Icons.monetization_on_outlined,
                     color: kWhite, size: 30),
               ),
             ),
@@ -124,7 +124,7 @@ class TabsScaffold extends StatelessWidget {
                 mainProviderFalse.changeBottomBarIndex(2);
               },
               child: AnimatedContainer(
-                duration: Duration(milliseconds: 200),
+                duration: const Duration(milliseconds: 200),
                 width: 52,
                 height: 52,
                 decoration: BoxDecoration(

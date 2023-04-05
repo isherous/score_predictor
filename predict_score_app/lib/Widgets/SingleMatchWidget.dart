@@ -118,6 +118,8 @@ class SingleMatchWidget extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 24),
+
+                      ///Border
                       Container(height: 1, color: kBorderBlack),
                     ],
                   ),

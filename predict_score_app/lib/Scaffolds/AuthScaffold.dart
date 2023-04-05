@@ -26,7 +26,7 @@ class AuthScaffold extends StatelessWidget {
         backgroundColor: kBlack,
         body: GestureDetector(
           onTap: () {
-            authProviderFalse.focusChange(focus: FocusNode(), context: context);
+            mainProviderFalse.focusChange(focus: FocusNode(), context: context);
           },
           child: SafeArea(
             child: Padding(

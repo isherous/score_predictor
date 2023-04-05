@@ -9,12 +9,14 @@ class PredictionsTab extends StatelessWidget {
     return ListView(
       children: [
         const SizedBox(height: 24),
+
+        ///Predictions
         ListView.builder(
           itemCount: 2,
           shrinkWrap: true,
-          physics: NeverScrollableScrollPhysics(),
+          physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (context, index) {
-            return SingleMatchWidget(showScores: true);
+            return const SingleMatchWidget(showScores: true);
           },
         ),
         const SizedBox(height: 24),

@@ -12,10 +12,15 @@ class BackButtonScaffold extends StatelessWidget {
 
   final String title;
   final Widget? child;
+
   @override
   Widget build(BuildContext context) {
+    MainProvider mainProvider = Provider.of<MainProvider>(context);
+    MainProvider mainProviderFalse =
+        Provider.of<MainProvider>(context, listen: false);
+
     return ModalProgressHUD(
-      inAsyncCall: Provider.of<MainProvider>(context).showProgress,
+      inAsyncCall: mainProvider.showProgress,
       child: Scaffold(
         backgroundColor: kBlack,
         // appBar: AppBar(
@@ -25,8 +30,8 @@ class BackButtonScaffold extends StatelessWidget {
         //   centerTitle: true,
         // ),
         body: GestureDetector(
-          onTap: () => Provider.of<AuthProvider>(context, listen: false)
-              .focusChange(focus: FocusNode(), context: context),
+          onTap: () => mainProviderFalse.focusChange(
+              focus: FocusNode(), context: context),
           child: SafeArea(
             child: child ?? const SizedBox(),
           ),
