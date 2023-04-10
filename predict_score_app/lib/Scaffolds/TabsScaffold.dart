@@ -1,22 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:predict_score_app/Constants/colors.dart';
 import 'package:predict_score_app/Constants/styles.dart';
+import 'package:predict_score_app/Constants/values.dart';
 import 'package:predict_score_app/Providers/MainProvider.dart';
+import 'package:predict_score_app/Screens/Notifications.dart';
 import 'package:predict_score_app/Screens/TabScreens/Home.dart';
-import 'package:predict_score_app/Screens/TabScreens/Predictions.dart';
+import 'package:predict_score_app/Screens/TabScreens/LeaderBoard.dart';
 import 'package:predict_score_app/Screens/TabScreens/Profile.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_svg/svg.dart';
 
 class TabsScaffold extends StatelessWidget {
   TabsScaffold({Key? key}) : super(key: key);
 
   static const id = "tabs_scaffold";
 
-  final _names = ["Upcoming Games", "Predictions", "Profile"];
+  final _names = ["Upcoming Games", "Leaderboard", "Profile"];
 
   final _tabs = const [
     HomeTab(),
-    PredictionsTab(),
+    LeaderBoard(),
     ProfileTab(),
   ];
 
@@ -43,11 +46,23 @@ class TabsScaffold extends StatelessWidget {
             height: 1.0,
           ),
         ),
-        title: Text(_names[bottomBarIndex], style: kSFMedium16),
+        title: Text(
+          _names[bottomBarIndex],
+          style: k16Medium,
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.pushNamed(context, NotificationsScreen.id);
+            },
+            icon: const Icon(Icons.notifications_none),
+          )
+        ],
       ),
       bottomNavigationBar: Stack(
         clipBehavior: Clip.none,
         children: [
+          ///Bottom bar
           Container(
             height: 82,
             decoration: BoxDecoration(
@@ -58,9 +73,9 @@ class TabsScaffold extends StatelessWidget {
 
           ///Home
           AnimatedPositioned(
-            top: bottomBarIndex == 0 ? -26 : 6,
-            left: width * .25 - 26,
-            right: width * .75 - 26,
+            top: bottomBarIndex == 0 ? -32 : 6,
+            left: width * .25 - 32,
+            right: width * .75 - 32,
             duration: const Duration(milliseconds: 200),
             child: GestureDetector(
               onTap: () {
@@ -68,8 +83,8 @@ class TabsScaffold extends StatelessWidget {
               },
               child: AnimatedContainer(
                 duration: const Duration(milliseconds: 200),
-                width: 52,
-                height: 52,
+                width: 64,
+                height: 64,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: bottomBarIndex == 0 ? kDarkBlue : kTransparent,
@@ -79,16 +94,17 @@ class TabsScaffold extends StatelessWidget {
                         kTransparent.withOpacity(bottomBarIndex == 0 ? 1 : 0),
                   ),
                 ),
-                child: const Icon(Icons.home, color: kWhite, size: 30),
+                child: Center(child: SvgPicture.asset(kHomeSVG, height: 24)),
+                // child: const Icon(Icons.home, color: kWhite, size: 26),
               ),
             ),
           ),
 
-          ///Predictions
+          ///LeaderBoard
           AnimatedPositioned(
-            top: bottomBarIndex == 1 ? -26 : 6,
-            left: width / 2 - 26,
-            right: width / 2 - 26,
+            top: bottomBarIndex == 1 ? -32 : 6,
+            left: width / 2 - 32,
+            right: width / 2 - 32,
             duration: const Duration(milliseconds: 200),
             child: GestureDetector(
               onTap: () {
@@ -96,8 +112,8 @@ class TabsScaffold extends StatelessWidget {
               },
               child: AnimatedContainer(
                 duration: const Duration(milliseconds: 200),
-                width: 52,
-                height: 52,
+                width: 64,
+                height: 64,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: bottomBarIndex == 1 ? kDarkBlue : kTransparent,
@@ -107,17 +123,17 @@ class TabsScaffold extends StatelessWidget {
                         kTransparent.withOpacity(bottomBarIndex == 1 ? 1 : 0),
                   ),
                 ),
-                child: const Icon(Icons.monetization_on_outlined,
-                    color: kWhite, size: 30),
+                child: Center(
+                    child: SvgPicture.asset(kLeaderBoardSVG, height: 24)),
               ),
             ),
           ),
 
           ///Profile
           AnimatedPositioned(
-            top: bottomBarIndex == 2 ? -26 : 6,
-            right: width * .25 - 26,
-            left: width * .75 - 26,
+            top: bottomBarIndex == 2 ? -32 : 6,
+            right: width * .25 - 32,
+            left: width * .75 - 32,
             duration: const Duration(milliseconds: 200),
             child: GestureDetector(
               onTap: () {
@@ -125,8 +141,8 @@ class TabsScaffold extends StatelessWidget {
               },
               child: AnimatedContainer(
                 duration: const Duration(milliseconds: 200),
-                width: 52,
-                height: 52,
+                width: 64,
+                height: 64,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: bottomBarIndex == 2 ? kDarkBlue : kTransparent,
@@ -136,7 +152,7 @@ class TabsScaffold extends StatelessWidget {
                         kTransparent.withOpacity(bottomBarIndex == 2 ? 1 : 0),
                   ),
                 ),
-                child: Icon(Icons.person, color: kWhite, size: 30),
+                child: Center(child: SvgPicture.asset(kProfileSVG, height: 24)),
               ),
             ),
           ),

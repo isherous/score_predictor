@@ -17,21 +17,26 @@ class AuthScaffold extends StatelessWidget {
     MainProvider mainProviderFalse =
         Provider.of<MainProvider>(context, listen: false);
 
-    AuthProvider authProviderFalse =
-        Provider.of<AuthProvider>(context, listen: false);
-
     return ModalProgressHUD(
       inAsyncCall: mainProvider.showProgress,
-      child: Scaffold(
-        backgroundColor: kBlack,
-        body: GestureDetector(
-          onTap: () {
-            mainProviderFalse.focusChange(focus: FocusNode(), context: context);
-          },
-          child: SafeArea(
+      progressIndicator: const CircularProgressIndicator(color: kDarkBlue),
+      child: GestureDetector(
+        onTap: () =>
+            mainProviderFalse.focusChange(focus: FocusNode(), context: context),
+        child: Scaffold(
+          backgroundColor: kBlack,
+          appBar: AppBar(
+            elevation: 0,
+            backgroundColor: kBlack,
+            // leading: IconButton(
+            //   icon: SvgPicture.asset(kBackSpaceSVG),
+            //   onPressed: () => Navigator.pop(context),
+            // ),
+          ),
+          body: SafeArea(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: child ?? const SizedBox(),
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: child,
             ),
           ),
         ),

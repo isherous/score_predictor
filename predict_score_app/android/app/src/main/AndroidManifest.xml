@@ -1,6 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.assistine.predict_score_app">
-   <application
+
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <application
         android:label="predict_score_app"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">

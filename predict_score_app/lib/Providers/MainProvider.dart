@@ -7,6 +7,12 @@ class MainProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  int topBarIndex = 0;
+  changeTopBarIndex(int i) {
+    topBarIndex = i;
+    notifyListeners();
+  }
+
   bool showProgress = false;
   changeShowProgress(bool b) {
     showProgress = b;
@@ -20,5 +26,4 @@ class MainProvider extends ChangeNotifier {
     FocusScope.of(context).requestFocus(focus);
     notifyListeners();
   }
-
 }
