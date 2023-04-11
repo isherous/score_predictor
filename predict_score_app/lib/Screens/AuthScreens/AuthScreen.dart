@@ -23,8 +23,9 @@ class AuthScreen extends StatelessWidget {
         children: [
           ///Logo and Make Predictions
           Expanded(
+            flex: 4,
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Center(child: SvgPicture.asset(kLogoSVG)),
                 const SizedBox(height: 14),
@@ -38,6 +39,7 @@ class AuthScreen extends StatelessWidget {
 
           ///Auth Buttons and Sign Up Button
           Expanded(
+            flex: 5,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24.0),
               child: Column(
@@ -105,7 +107,7 @@ class AuthScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 24),
+                  const SizedBox(height: 36),
                 ],
               ),
             ),

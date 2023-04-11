@@ -107,9 +107,16 @@ TextStyle k25Medium = GoogleFonts.dmSans(
   color: kWhite,
 ));
 
+TextStyle k30Bold = GoogleFonts.dmSans(
+    textStyle: const TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 30,
+  color: kWhite,
+));
+
 TextStyle k36Bold = GoogleFonts.dmSans(
     textStyle: const TextStyle(
-  fontWeight: FontWeight.w600,
+  fontWeight: FontWeight.bold,
   fontSize: 36,
   color: kWhite,
 ));

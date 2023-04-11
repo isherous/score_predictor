@@ -7,13 +7,13 @@ import 'package:predict_score_app/Constants/styles.dart';
 import 'package:predict_score_app/Scaffolds/BackButtonScaffold.dart';
 import 'package:predict_score_app/Widgets/BlueButton.dart';
 import 'package:intl/intl.dart' show DateFormat;
+import 'package:predict_score_app/Widgets/PredictionDialog.dart';
 
 class MatchDetailScreen extends StatelessWidget {
   const MatchDetailScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
     final today = DateTime.now();
 
     return BackButtonScaffold(
@@ -140,9 +140,14 @@ class MatchDetailScreen extends StatelessWidget {
                     Expanded(
                       child: Row(
                         children: [
-                          const Icon(FontAwesomeIcons.calendar,color: kWhite,size: 12,),
+                          const Icon(
+                            FontAwesomeIcons.calendar,
+                            color: kWhite,
+                            size: 12,
+                          ),
                           const SizedBox(width: 8),
-                          Text(DateFormat('EE, dd MMM').format(today), style: k13Medium),
+                          Text(DateFormat('EE, dd MMM').format(today),
+                              style: k13Medium),
                         ],
                       ),
                     ),
@@ -151,9 +156,14 @@ class MatchDetailScreen extends StatelessWidget {
                     Expanded(
                       child: Row(
                         children: [
-                          const Icon(FontAwesomeIcons.clock,color: kWhite,size: 12,),
+                          const Icon(
+                            FontAwesomeIcons.clock,
+                            color: kWhite,
+                            size: 12,
+                          ),
                           const SizedBox(width: 8),
-                          Text(DateFormat('hh:mm a').format(today), style: k13Medium),
+                          Text(DateFormat('hh:mm a').format(today),
+                              style: k13Medium),
                         ],
                       ),
                     ),
@@ -163,7 +173,19 @@ class MatchDetailScreen extends StatelessWidget {
             ),
 
             ///Make Prediction Button
-            BlueButton(text: "Make prediction", function: () {}),
+            BlueButton(
+              text: "Make prediction",
+              function: () async {
+                ///Prediction Sheet
+                await showModalBottomSheet(
+                  backgroundColor: kTransparent,
+                  context: context,
+                  builder: (context) {
+                    return PredictionDialog();
+                  },
+                );
+              },
+            ),
           ],
         ),
       ),
