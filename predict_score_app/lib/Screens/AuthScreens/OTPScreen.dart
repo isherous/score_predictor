@@ -56,17 +56,19 @@ class OTPScreen extends StatelessWidget {
           const SizedBox(height: 24),
 
           ///Sign In Button
-          BlueButton(text: "Sign In", function: () {}),
+          BlueButton(
+              text: "Sign In",
+              function: () {
+                Navigator.of(context).pushNamedAndRemoveUntil(
+                    TabsScaffold.id, (Route<dynamic> route) => false);
+              }),
 
           const SizedBox(height: 24),
 
           ///Resend OTP
           Center(
             child: InkWell(
-              onTap: () async {
-                Navigator.of(context).pushNamedAndRemoveUntil(
-                    TabsScaffold.id, (Route<dynamic> route) => false);
-              },
+              onTap: () async {},
               child: Container(
                   padding: const EdgeInsets.symmetric(vertical: 12),
                   child: Text("Resend OTP", style: k16SemiBold)),

@@ -6,6 +6,30 @@
       <excludeFolder url="file://$MODULE_DIR$/predict_score_app/build" />
       <excludeFolder url="file://$MODULE_DIR$/predict_score_app/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/predict_score_app/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/predict_score_app/ios/.symlinks/plugins/firebase_analytics/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/predict_score_app/ios/.symlinks/plugins/firebase_analytics/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/predict_score_app/ios/.symlinks/plugins/firebase_analytics/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/predict_score_app/ios/.symlinks/plugins/modal_progress_hud_nsn/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/predict_score_app/ios/.symlinks/plugins/modal_progress_hud_nsn/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/predict_score_app/ios/.symlinks/plugins/modal_progress_hud_nsn/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/predict_score_app/ios/.symlinks/plugins/firebase_core/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/predict_score_app/ios/.symlinks/plugins/firebase_core/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/predict_score_app/ios/.symlinks/plugins/firebase_core/build" />
+      <excludeFolder url="file://$MODULE_DIR$/predict_score_app/ios/.symlinks/plugins/modal_progress_hud_nsn/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/predict_score_app/ios/.symlinks/plugins/modal_progress_hud_nsn/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/predict_score_app/ios/.symlinks/plugins/modal_progress_hud_nsn/build" />
+      <excludeFolder url="file://$MODULE_DIR$/predict_score_app/ios/.symlinks/plugins/fluttertoast/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/predict_score_app/ios/.symlinks/plugins/fluttertoast/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/predict_score_app/ios/.symlinks/plugins/fluttertoast/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/predict_score_app/ios/.symlinks/plugins/firebase_core/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/predict_score_app/ios/.symlinks/plugins/firebase_core/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/predict_score_app/ios/.symlinks/plugins/firebase_core/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/predict_score_app/ios/.symlinks/plugins/firebase_analytics/build" />
+      <excludeFolder url="file://$MODULE_DIR$/predict_score_app/ios/.symlinks/plugins/firebase_analytics/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/predict_score_app/ios/.symlinks/plugins/firebase_analytics/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/predict_score_app/ios/.symlinks/plugins/fluttertoast/build" />
+      <excludeFolder url="file://$MODULE_DIR$/predict_score_app/ios/.symlinks/plugins/fluttertoast/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/predict_score_app/ios/.symlinks/plugins/fluttertoast/.pub" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

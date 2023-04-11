@@ -36,7 +36,7 @@ class BackButtonScaffold extends StatelessWidget {
               BoxShadow(
                 color: kBorderBlack,
                 offset: Offset(0, 2.0),
-                blurRadius: 4.0,
+                blurRadius: 0.0,
               )
             ]),
             child: AppBar(

@@ -1,16 +1,21 @@
 import 'package:flag/flag_widget.dart';
 import 'package:flag/flag_enum.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:predict_score_app/Constants/colors.dart';
 import 'package:predict_score_app/Constants/styles.dart';
 import 'package:predict_score_app/Scaffolds/BackButtonScaffold.dart';
 import 'package:predict_score_app/Widgets/BlueButton.dart';
+import 'package:intl/intl.dart' show DateFormat;
 
 class MatchDetailScreen extends StatelessWidget {
   const MatchDetailScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+
+    final today = DateTime.now();
+
     return BackButtonScaffold(
       title: "SPA vs ITA",
       child: Padding(
@@ -133,12 +138,24 @@ class MatchDetailScreen extends StatelessWidget {
                   children: [
                     ///Date
                     Expanded(
-                      child: Text("Date", style: k13Medium),
+                      child: Row(
+                        children: [
+                          const Icon(FontAwesomeIcons.calendar,color: kWhite,size: 12,),
+                          const SizedBox(width: 8),
+                          Text(DateFormat('EE, dd MMM').format(today), style: k13Medium),
+                        ],
+                      ),
                     ),
 
                     ///Time
                     Expanded(
-                      child: Text("Time", style: k13Medium),
+                      child: Row(
+                        children: [
+                          const Icon(FontAwesomeIcons.clock,color: kWhite,size: 12,),
+                          const SizedBox(width: 8),
+                          Text(DateFormat('hh:mm a').format(today), style: k13Medium),
+                        ],
+                      ),
                     ),
                   ],
                 )

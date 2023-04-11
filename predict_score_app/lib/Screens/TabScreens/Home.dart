@@ -36,6 +36,7 @@ class HomeTab extends StatelessWidget {
                 children: [
                   ///Matches
                   GestureDetector(
+                    behavior: HitTestBehavior.opaque,
                     onTap: () {
                       mainProviderFalse.changeTopBarIndex(0);
                     },
@@ -54,6 +55,7 @@ class HomeTab extends StatelessWidget {
 
                   ///Predictions
                   GestureDetector(
+                    behavior: HitTestBehavior.opaque,
                     onTap: () {
                       mainProviderFalse.changeTopBarIndex(1);
                     },
@@ -72,7 +74,7 @@ class HomeTab extends StatelessWidget {
 
               ///Border
               AnimatedPositioned(
-                left: topBarIndex == 0 ? 0 : 74,
+                left: topBarIndex == 0 ? 0 : 72,
                 top: 28,
                 curve: Curves.easeInOut,
                 duration: const Duration(milliseconds: 300),
@@ -81,7 +83,8 @@ class HomeTab extends StatelessWidget {
                   duration: const Duration(milliseconds: 300),
                   height: 3,
                   color: kDarkBlue,
-                  width: topBarIndex == 0 ? 54 : 68,
+                  // width: 50,
+                  width: topBarIndex == 0 ? 50 : 60,
                 ),
               ),
             ],
