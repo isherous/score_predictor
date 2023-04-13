@@ -46,7 +46,7 @@ class HomeTab extends StatelessWidget {
                       duration: const Duration(milliseconds: 300),
                       child: Padding(
                         padding: const EdgeInsets.symmetric(vertical: 8.0),
-                        child: Text("Matches", style: k13Medium),
+                        child: Text("Matches", style: k17Medium),
                       ),
                     ),
                   ),
@@ -65,7 +65,7 @@ class HomeTab extends StatelessWidget {
                       duration: const Duration(milliseconds: 300),
                       child: Padding(
                         padding: const EdgeInsets.symmetric(vertical: 8.0),
-                        child: Text("Predictions", style: k13Medium),
+                        child: Text("Predictions", style: k17Medium),
                       ),
                     ),
                   ),
@@ -74,8 +74,8 @@ class HomeTab extends StatelessWidget {
 
               ///Border
               AnimatedPositioned(
-                left: topBarIndex == 0 ? 0 : 72,
-                top: 28,
+                left: topBarIndex == 0 ? 0 : 90,
+                top: 32,
                 curve: Curves.easeInOut,
                 duration: const Duration(milliseconds: 300),
                 child: AnimatedContainer(
@@ -84,7 +84,7 @@ class HomeTab extends StatelessWidget {
                   height: 3,
                   color: kDarkBlue,
                   // width: 50,
-                  width: topBarIndex == 0 ? 50 : 60,
+                  width: topBarIndex == 0 ? 68 : 90,
                 ),
               ),
             ],

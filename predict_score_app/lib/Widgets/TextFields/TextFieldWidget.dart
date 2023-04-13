@@ -38,6 +38,8 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
       keyboardType: widget.keyboardType,
       obscureText: widget.isPassword && !showPassword,
       decoration: InputDecoration(
+        labelText: widget.hintText,
+        labelStyle: k13Medium.copyWith(color: kWhite.withOpacity(0.5)),
         suffixIcon: widget.isPassword
             ? IconButton(
                 onPressed: () {
@@ -69,8 +71,8 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
           borderSide: const BorderSide(color: kRed, width: 1.0),
         ),
 
-        hintText: widget.hintText,
-        hintStyle: k15Medium.copyWith(color: kWhite.withOpacity(0.5)),
+        // hintText: widget.hintText,
+        // hintStyle: k15Medium.copyWith(color: kWhite.withOpacity(0.5)),
         //errorStyle: k0,
         errorStyle:
             widget.showErrorMessage ? k13Medium.copyWith(color: kRed) : k0,

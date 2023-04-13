@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:provider/provider.dart';
 
 import '../Constants/colors.dart';
+import '../Constants/values.dart';
 import '../Providers/AuthProvider.dart';
 import '../Providers/MainProvider.dart';
 
@@ -28,10 +30,12 @@ class AuthScaffold extends StatelessWidget {
           appBar: AppBar(
             elevation: 0,
             backgroundColor: kBlack,
-            // leading: IconButton(
-            //   icon: SvgPicture.asset(kBackSpaceSVG),
-            //   onPressed: () => Navigator.pop(context),
-            // ),
+
+            ///Back Button
+            leading: IconButton(
+              icon: SvgPicture.asset(kBackArrow, height: 16),
+              onPressed: () => Navigator.pop(context),
+            ),
           ),
           body: SafeArea(
             child: Padding(

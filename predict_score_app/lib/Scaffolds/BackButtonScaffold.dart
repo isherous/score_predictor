@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:predict_score_app/Constants/styles.dart';
+import 'package:predict_score_app/Constants/values.dart';
 import 'package:provider/provider.dart';
 
 import '../Constants/colors.dart';
@@ -44,6 +46,12 @@ class BackButtonScaffold extends StatelessWidget {
               elevation: 1,
               title: Text(title, style: k17Medium),
               centerTitle: true,
+
+              ///Back Button
+              leading: IconButton(
+                icon: SvgPicture.asset(kBackArrow, height: 16),
+                onPressed: () => Navigator.pop(context),
+              ),
             ),
           ),
         ),

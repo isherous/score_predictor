@@ -20,7 +20,9 @@ class SingleMatchWidget extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => MatchDetailScreen(),
+            builder: (context) => MatchDetailScreen(
+              showYourPrediction: showScores,
+            ),
           ),
         );
       },

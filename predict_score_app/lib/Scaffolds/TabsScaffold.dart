@@ -73,7 +73,7 @@ class TabsScaffold extends StatelessWidget {
 
           ///Home
           AnimatedPositioned(
-            top: bottomBarIndex == 0 ? -32 : 6,
+            top: bottomBarIndex == 0 ? -32 : 0,
             left: width * .25 - 32,
             right: width * .75 - 32,
             duration: const Duration(milliseconds: 200),
@@ -102,7 +102,7 @@ class TabsScaffold extends StatelessWidget {
 
           ///LeaderBoard
           AnimatedPositioned(
-            top: bottomBarIndex == 1 ? -32 : 6,
+            top: bottomBarIndex == 1 ? -32 : 0,
             left: width / 2 - 32,
             right: width / 2 - 32,
             duration: const Duration(milliseconds: 200),
@@ -131,7 +131,7 @@ class TabsScaffold extends StatelessWidget {
 
           ///Profile
           AnimatedPositioned(
-            top: bottomBarIndex == 2 ? -32 : 6,
+            top: bottomBarIndex == 2 ? -32 : 0,
             right: width * .25 - 32,
             left: width * .75 - 32,
             duration: const Duration(milliseconds: 200),

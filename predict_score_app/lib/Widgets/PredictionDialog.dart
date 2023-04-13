@@ -7,14 +7,14 @@ import '../Constants/colors.dart';
 import '../Constants/styles.dart';
 import 'BlueButton.dart';
 
-class PredictionDialog extends StatefulWidget {
-  const PredictionDialog({Key? key}) : super(key: key);
+class PredictionSheet extends StatefulWidget {
+  const PredictionSheet({Key? key}) : super(key: key);
 
   @override
-  State<PredictionDialog> createState() => _PredictionDialogState();
+  State<PredictionSheet> createState() => _PredictionSheetState();
 }
 
-class _PredictionDialogState extends State<PredictionDialog> {
+class _PredictionSheetState extends State<PredictionSheet> {
   final _firstController = FixedExtentScrollController(initialItem: 3);
   final _secondController = FixedExtentScrollController(initialItem: 1);
 

@@ -10,7 +10,10 @@ import 'package:intl/intl.dart' show DateFormat;
 import 'package:predict_score_app/Widgets/PredictionDialog.dart';
 
 class MatchDetailScreen extends StatelessWidget {
-  const MatchDetailScreen({Key? key}) : super(key: key);
+  const MatchDetailScreen({Key? key, required this.showYourPrediction})
+      : super(key: key);
+
+  final bool showYourPrediction;
 
   @override
   Widget build(BuildContext context) {
@@ -109,6 +112,72 @@ class MatchDetailScreen extends StatelessWidget {
                   ],
                 ),
 
+                ///Your Prediction
+                if (showYourPrediction)
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(height: 24),
+
+                      ///Your Prediction
+                      Text(
+                        "Your Prediction",
+                        style: k15Medium.copyWith(
+                          color: kWhite.withOpacity(0.5),
+                        ),
+                      ),
+
+                      SizedBox(height: 18),
+
+                      ///Prediction Scores of Both Teams
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          ///First Team
+                          Column(
+                            children: [
+                              ///Score
+                              Container(
+                                width: 60,
+                                height: 66,
+                                decoration: BoxDecoration(
+                                  color: kWhite.withOpacity(0.1),
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                                child: Center(
+                                  child: Text("3", style: k30Bold),
+                                ),
+                              ),
+                              SizedBox(height: 12),
+                              Text("SPA", style: k15Medium),
+                            ],
+                          ),
+
+                          ///Second Team
+                          Column(
+                            children: [
+                              ///Score
+                              Container(
+                                width: 60,
+                                height: 66,
+                                decoration: BoxDecoration(
+                                  color: kWhite.withOpacity(0.1),
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                                child: Center(
+                                  child: Text("1", style: k30Bold),
+                                ),
+                              ),
+                              SizedBox(height: 12),
+                              Text("ITA", style: k15Medium),
+                            ],
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 2),
+                    ],
+                  ),
+
                 ///Border
                 Container(
                   margin: const EdgeInsets.symmetric(vertical: 24),
@@ -181,7 +250,7 @@ class MatchDetailScreen extends StatelessWidget {
                   backgroundColor: kTransparent,
                   context: context,
                   builder: (context) {
-                    return PredictionDialog();
+                    return PredictionSheet();
                   },
                 );
               },
