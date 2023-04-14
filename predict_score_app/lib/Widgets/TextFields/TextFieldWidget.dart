@@ -5,17 +5,17 @@ import '../../Constants/colors.dart';
 import '../../Constants/styles.dart';
 
 class TextFieldWidget extends StatefulWidget {
-  const TextFieldWidget({
-    Key? key,
-    this.controller,
-    required this.hintText,
-    this.isPassword = false,
-    this.keyboardType = TextInputType.text,
-    this.isDisabled = false,
-    this.showErrorMessage = true,
-    this.onSubmit,
-    required this.labelText
-  }) : super(key: key);
+  const TextFieldWidget(
+      {Key? key,
+      this.controller,
+      required this.hintText,
+      this.isPassword = false,
+      this.keyboardType = TextInputType.text,
+      this.isDisabled = false,
+      this.showErrorMessage = true,
+      this.onSubmit,
+      required this.labelText})
+      : super(key: key);
 
   final TextEditingController? controller;
   final String hintText;
@@ -51,8 +51,8 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
           keyboardType: widget.keyboardType,
           obscureText: widget.isPassword && !showPassword,
           decoration: InputDecoration(
-            labelText: widget.hintText,
-            labelStyle: k13Medium.copyWith(color: kWhite.withOpacity(0.5)),
+            // labelText: widget.labelText,
+            // labelStyle: k13Medium.copyWith(color: kWhite.withOpacity(0.5)),
             suffixIcon: widget.isPassword
                 ? IconButton(
                     onPressed: () {
@@ -84,8 +84,8 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
               borderSide: const BorderSide(color: kRed, width: 1.0),
             ),
 
-            // hintText: widget.hintText,
-            // hintStyle: k15Medium.copyWith(color: kWhite.withOpacity(0.5)),
+            hintText: widget.hintText,
+            hintStyle: k15Medium.copyWith(color: kWhite.withOpacity(0.5)),
             //errorStyle: k0,
             errorStyle:
                 widget.showErrorMessage ? k13Medium.copyWith(color: kRed) : k0,
@@ -99,7 +99,7 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
           style: k15Medium,
           cursorColor: kWhite,
           validator: (value) => value!.trim().isEmpty
-              ? '${widget.hintText} cannot be blank'
+              ? '${widget.labelText} cannot be blank'
               : null,
         ),
       ],

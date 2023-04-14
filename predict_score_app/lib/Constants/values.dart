@@ -6,5 +6,6 @@ const kHomeSVG = "assets/tabIcons/home.svg";
 const kLeaderBoardSVG = "assets/tabIcons/leaderBoard.svg";
 const kProfileSVG = "assets/tabIcons/profile.svg";
 
-///
-const kBackArrow = "assets/backArrow.svg";
+///Icons
+const kBackArrowSVG = "assets/backArrow.svg";
+const kInfoIconSVG = "assets/infoIcon.svg";

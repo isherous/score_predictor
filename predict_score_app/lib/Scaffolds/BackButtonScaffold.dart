@@ -49,7 +49,7 @@ class BackButtonScaffold extends StatelessWidget {
 
               ///Back Button
               leading: IconButton(
-                icon: SvgPicture.asset(kBackArrow, height: 16),
+                icon: SvgPicture.asset(kBackArrowSVG, height: 16),
                 onPressed: () => Navigator.pop(context),
               ),
             ),

@@ -25,16 +25,16 @@ class SignInScreen extends StatelessWidget {
           ///Email
           TextFieldWidget(
             labelText: "Email",
+            hintText: "Enter your email",
             keyboardType: TextInputType.emailAddress,
-            hintText: "john@mail.com",
           ),
           const SizedBox(height: 24),
 
           ///Password
           TextFieldWidget(
             labelText: "Password",
+            hintText: "Enter your password",
             isPassword: true,
-            hintText: "******",
           ),
 
           const SizedBox(height: 12),

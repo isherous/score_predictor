@@ -1,9 +1,11 @@
 import 'package:flag/flag_widget.dart';
 import 'package:flag/flag_enum.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:predict_score_app/Constants/colors.dart';
 import 'package:predict_score_app/Constants/styles.dart';
+import 'package:predict_score_app/Constants/values.dart';
 import 'package:predict_score_app/Scaffolds/BackButtonScaffold.dart';
 import 'package:predict_score_app/Widgets/BlueButton.dart';
 import 'package:intl/intl.dart' show DateFormat;
@@ -241,19 +243,51 @@ class MatchDetailScreen extends StatelessWidget {
               ],
             ),
 
-            ///Make Prediction Button
-            BlueButton(
-              text: "Make prediction",
-              function: () async {
-                ///Prediction Sheet
-                await showModalBottomSheet(
-                  backgroundColor: kTransparent,
-                  context: context,
-                  builder: (context) {
-                    return PredictionSheet();
+            ///Make Prediction Button and Prediction Window
+            Column(
+              children: [
+                ///Prediction Window
+                Container(
+                  padding: EdgeInsets.symmetric(vertical: 20, horizontal: 24),
+                  decoration: BoxDecoration(
+                    color: kLightBlack,
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ///Info Icon
+                      SvgPicture.asset(kInfoIconSVG),
+
+                      SizedBox(width: 18),
+
+                      ///Prediction Window Message
+                      Flexible(
+                        child: Text(
+                            "Prediction window closes 1  hour before the match",
+                            style: k15Medium),
+                      ),
+                    ],
+                  ),
+                ),
+
+                SizedBox(height: 12),
+
+                ///Make Prediction Button
+                BlueButton(
+                  text: "Make prediction",
+                  function: () async {
+                    ///Prediction Sheet
+                    await showModalBottomSheet(
+                      backgroundColor: kTransparent,
+                      context: context,
+                      builder: (context) {
+                        return PredictionSheet();
+                      },
+                    );
                   },
-                );
-              },
+                ),
+              ],
             ),
           ],
         ),

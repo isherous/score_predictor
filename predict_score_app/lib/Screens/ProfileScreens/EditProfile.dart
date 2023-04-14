@@ -268,7 +268,7 @@ class _EditProfileState extends State<EditProfile> {
             ///Name
             TextFieldWidget(
               labelText: "Name",
-              hintText: "John Doe",
+              hintText: "Enter your name",
             ),
             const SizedBox(height: 40),
 

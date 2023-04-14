@@ -20,7 +20,10 @@ class ForgotPassword extends StatelessWidget {
           const SizedBox(height: 48),
 
           ///Email
-          TextFieldWidget(labelText: "Email",hintText: "john@mail.com",),
+          TextFieldWidget(
+            labelText: "Email",
+            hintText: "Enter your email",
+          ),
           const SizedBox(height: 24),
 
           ///Reset Password Button

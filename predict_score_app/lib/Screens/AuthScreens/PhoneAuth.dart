@@ -23,16 +23,16 @@ class PhoneAuth extends StatelessWidget {
           ///Phone
           TextFieldWidget(
             labelText: "Phone",
+            hintText: "Enter your phone number",
             keyboardType: TextInputType.phone,
-            hintText: "1234567890",
           ),
           const SizedBox(height: 24),
 
           ///Name
           TextFieldWidget(
             labelText: "Name",
+            hintText: "Enter your name",
             keyboardType: TextInputType.name,
-            hintText: "John Doe",
           ),
 
           const SizedBox(height: 24),
