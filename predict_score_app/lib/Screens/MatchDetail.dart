@@ -53,7 +53,7 @@ class MatchDetailScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             ///Full Name
-                            Text("Spain", style: k13Medium),
+                            Text("Spain", style: k17Medium),
 
                             const SizedBox(height: 4),
 
@@ -94,7 +94,7 @@ class MatchDetailScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             ///Full Name
-                            Text("Italy", style: k13Medium),
+                            Text("Italy", style: k17Medium),
 
                             const SizedBox(height: 4),
 

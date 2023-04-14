@@ -14,10 +14,12 @@ class TextFieldWidget extends StatefulWidget {
     this.isDisabled = false,
     this.showErrorMessage = true,
     this.onSubmit,
+    required this.labelText
   }) : super(key: key);
 
   final TextEditingController? controller;
   final String hintText;
+  final String labelText;
   final bool isPassword;
   final TextInputType keyboardType;
   final bool isDisabled;
@@ -33,60 +35,74 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      enabled: !widget.isDisabled,
-      keyboardType: widget.keyboardType,
-      obscureText: widget.isPassword && !showPassword,
-      decoration: InputDecoration(
-        labelText: widget.hintText,
-        labelStyle: k13Medium.copyWith(color: kWhite.withOpacity(0.5)),
-        suffixIcon: widget.isPassword
-            ? IconButton(
-                onPressed: () {
-                  setState(() {
-                    showPassword = !showPassword;
-                  });
-                },
-                icon: Icon(
-                  showPassword
-                      ? FontAwesomeIcons.eye
-                      : FontAwesomeIcons.eyeSlash,
-                  size: 18,
-                  color: kWhite.withOpacity(0.5),
-                ),
-              )
-            : const SizedBox(),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        ///Label
+        Text(
+          widget.labelText,
+          style: k15Medium.copyWith(color: kWhite.withOpacity(0.5)),
+        ),
+        SizedBox(height: 8),
 
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8.0),
-          borderSide: const BorderSide(color: kDarkBlue),
-        ),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8.0),
-          borderSide: const BorderSide(color: kBorderBlack),
-        ),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
-        errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
-          borderSide: const BorderSide(color: kRed, width: 1.0),
-        ),
+        ///TextField
+        TextFormField(
+          enabled: !widget.isDisabled,
+          keyboardType: widget.keyboardType,
+          obscureText: widget.isPassword && !showPassword,
+          decoration: InputDecoration(
+            labelText: widget.hintText,
+            labelStyle: k13Medium.copyWith(color: kWhite.withOpacity(0.5)),
+            suffixIcon: widget.isPassword
+                ? IconButton(
+                    onPressed: () {
+                      setState(() {
+                        showPassword = !showPassword;
+                      });
+                    },
+                    icon: Icon(
+                      showPassword
+                          ? FontAwesomeIcons.eye
+                          : FontAwesomeIcons.eyeSlash,
+                      size: 18,
+                      color: kWhite.withOpacity(0.5),
+                    ),
+                  )
+                : const SizedBox(),
 
-        // hintText: widget.hintText,
-        // hintStyle: k15Medium.copyWith(color: kWhite.withOpacity(0.5)),
-        //errorStyle: k0,
-        errorStyle:
-            widget.showErrorMessage ? k13Medium.copyWith(color: kRed) : k0,
-        focusedErrorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
-          borderSide: const BorderSide(color: kDarkBlue),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8.0),
+              borderSide: const BorderSide(color: kDarkBlue),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8.0),
+              borderSide: const BorderSide(color: kBorderBlack),
+            ),
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+            errorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8),
+              borderSide: const BorderSide(color: kRed, width: 1.0),
+            ),
+
+            // hintText: widget.hintText,
+            // hintStyle: k15Medium.copyWith(color: kWhite.withOpacity(0.5)),
+            //errorStyle: k0,
+            errorStyle:
+                widget.showErrorMessage ? k13Medium.copyWith(color: kRed) : k0,
+            focusedErrorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8),
+              borderSide: const BorderSide(color: kDarkBlue),
+            ),
+          ),
+          onFieldSubmitted: widget.onSubmit,
+          controller: widget.controller,
+          style: k15Medium,
+          cursorColor: kWhite,
+          validator: (value) => value!.trim().isEmpty
+              ? '${widget.hintText} cannot be blank'
+              : null,
         ),
-      ),
-      onFieldSubmitted: widget.onSubmit,
-      controller: widget.controller,
-      style: k15Medium,
-      cursorColor: kWhite,
-      validator: (value) =>
-          value!.trim().isEmpty ? '${widget.hintText} cannot be blank' : null,
+      ],
     );
   }
 }

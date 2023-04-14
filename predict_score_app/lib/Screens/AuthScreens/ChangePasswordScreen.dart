@@ -20,15 +20,15 @@ class ChangePassword extends StatelessWidget {
           const SizedBox(height: 48),
 
           ///Current Password
-          TextFieldWidget(hintText: "Current Password"),
+          TextFieldWidget(labelText: "Current Password",hintText: "******",),
           const SizedBox(height: 24),
 
           ///New Password
-          TextFieldWidget(hintText: "New Password"),
+          TextFieldWidget(labelText: "New Password",hintText: "******",),
           const SizedBox(height: 24),
 
           ///Confirm Password
-          TextFieldWidget(hintText: "Confirm Password"),
+          TextFieldWidget(labelText: "Confirm Password",hintText: "******",),
           const SizedBox(height: 24),
 
           ///Change Password Button

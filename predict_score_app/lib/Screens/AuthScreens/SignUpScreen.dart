@@ -21,20 +21,26 @@ class SignUpScreen extends StatelessWidget {
 
           ///Name
           TextFieldWidget(
-            hintText: "Name",
+            labelText: "Name",
             keyboardType: TextInputType.name,
+            hintText: "John Doe",
           ),
           SizedBox(height: 24),
 
           ///Email
           TextFieldWidget(
-            hintText: "Email",
+            labelText: "Email",
             keyboardType: TextInputType.emailAddress,
+            hintText: "john@mail.com",
           ),
           SizedBox(height: 24),
 
           ///Password
-          TextFieldWidget(hintText: "Password", isPassword: true),
+          TextFieldWidget(
+            labelText: "Password",
+            isPassword: true,
+            hintText: "******",
+          ),
           SizedBox(height: 24),
 
           ///Sign In Button

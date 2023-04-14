@@ -7,8 +7,41 @@ import 'package:provider/provider.dart';
 import '../../Widgets/SingleMatchWidget.dart';
 import 'package:intl/intl.dart' show DateFormat;
 
-class HomeTab extends StatelessWidget {
-  const HomeTab({Key? key}) : super(key: key);
+class HomeTab extends StatefulWidget {
+  HomeTab({Key? key}) : super(key: key);
+
+  @override
+  State<HomeTab> createState() => _HomeTabState();
+}
+
+class _HomeTabState extends State<HomeTab> {
+  final matchesKey = GlobalKey();
+  final predictionsKey = GlobalKey();
+
+  int topBarIndex = 0;
+  double matchesWidth = 0;
+  double predictionsWidth = 0;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _initializingTheBorderWidths();
+  }
+
+  _initializingTheBorderWidths(){
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      RenderBox matchesBox =
+      matchesKey.currentContext?.findRenderObject() as RenderBox;
+      matchesWidth = matchesBox.size.width;
+
+      RenderBox predictionsBox =
+      predictionsKey.currentContext?.findRenderObject() as RenderBox;
+      predictionsWidth = predictionsBox.size.width;
+      setState(() {
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +50,7 @@ class HomeTab extends StatelessWidget {
     MainProvider mainProviderFalse =
         Provider.of<MainProvider>(context, listen: false);
 
-    int topBarIndex = mainProvider.topBarIndex;
+    //int topBarIndex = mainProvider.topBarIndex;
 
     final today = DateTime.now();
 
@@ -36,9 +69,13 @@ class HomeTab extends StatelessWidget {
                 children: [
                   ///Matches
                   GestureDetector(
+                    key: matchesKey,
                     behavior: HitTestBehavior.opaque,
                     onTap: () {
-                      mainProviderFalse.changeTopBarIndex(0);
+                      setState(() {
+                        topBarIndex = 0;
+                      });
+                      //mainProviderFalse.changeTopBarIndex(0);
                     },
                     child: AnimatedOpacity(
                       curve: Curves.easeInOut,
@@ -46,7 +83,10 @@ class HomeTab extends StatelessWidget {
                       duration: const Duration(milliseconds: 300),
                       child: Padding(
                         padding: const EdgeInsets.symmetric(vertical: 8.0),
-                        child: Text("Matches", style: k17Medium),
+                        child: Text(
+                          "Matches",
+                          style: k17Medium,
+                        ),
                       ),
                     ),
                   ),
@@ -55,9 +95,13 @@ class HomeTab extends StatelessWidget {
 
                   ///Predictions
                   GestureDetector(
+                    key: predictionsKey,
                     behavior: HitTestBehavior.opaque,
                     onTap: () {
-                      mainProviderFalse.changeTopBarIndex(1);
+                      setState(() {
+                        topBarIndex = 1;
+                      });
+                      //mainProviderFalse.changeTopBarIndex(1);
                     },
                     child: AnimatedOpacity(
                       curve: Curves.easeInOut,
@@ -74,7 +118,7 @@ class HomeTab extends StatelessWidget {
 
               ///Border
               AnimatedPositioned(
-                left: topBarIndex == 0 ? 0 : 90,
+                left: topBarIndex == 0 ? 0 : matchesWidth + 20,
                 top: 32,
                 curve: Curves.easeInOut,
                 duration: const Duration(milliseconds: 300),
@@ -84,7 +128,7 @@ class HomeTab extends StatelessWidget {
                   height: 3,
                   color: kDarkBlue,
                   // width: 50,
-                  width: topBarIndex == 0 ? 68 : 90,
+                  width: topBarIndex == 0 ? matchesWidth : predictionsWidth,
                 ),
               ),
             ],

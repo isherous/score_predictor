@@ -17,7 +17,7 @@ class TabsScaffold extends StatelessWidget {
 
   final _names = ["Upcoming Games", "Leaderboard", "Profile"];
 
-  final _tabs = const [
+  final _tabs =  [
     HomeTab(),
     LeaderBoard(),
     ProfileTab(),

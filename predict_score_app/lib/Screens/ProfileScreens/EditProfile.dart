@@ -266,7 +266,10 @@ class _EditProfileState extends State<EditProfile> {
             const SizedBox(height: 48),
 
             ///Name
-            const TextFieldWidget(hintText: "Name"),
+            TextFieldWidget(
+              labelText: "Name",
+              hintText: "John Doe",
+            ),
             const SizedBox(height: 40),
 
             ///Connect
