@@ -1,6 +1,6 @@
 # Score Predictor
 
-![App Logo](images/logo.png)
+![App Logo](./images/logo.png)
 
 ## Description
 **Get Ready for Euro Cup**
@@ -19,9 +19,6 @@ Predict Scores and climb the Leaderboard
 
 ## Screenshots
 
-![img](./images/image1.png)
-![img](./images/image2.png)
-![img](./images/image3.png)
 ![Screenshot 1](./images/image1.png)
 ![Screenshot 2](./images/image2.png)
 ![Screenshot 3](./images/image3.png)
