@@ -9,19 +9,22 @@ Predict Scores and climb the Leaderboard
 
 ## Features
 
-- [Leaderboard] 
+- Leaderboard 
   
   - Compete with friends, family, and other fans from around the world and climb the ranks as you predict scores and earn points.
 
-- [Easy to use] 
+- Easy to use
   
   - No complicated forms, confusing buttons or time-consuming steps - just download our app, select the match, predict the score, and submit. It's that easy!
 
 ## Screenshots
 
-![Screenshot 1](images/image1.png)
-![Screenshot 2](images/image2.png)
-![Screenshot 3](images/image3.png)
+![img](./images/image1.png)
+![img](./images/image2.png)
+![img](./images/image3.png)
+![Screenshot 1](./images/image1.png)
+![Screenshot 2](./images/image2.png)
+![Screenshot 3](./images/image3.png)
 
 ## Test it yourself
 
