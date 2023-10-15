@@ -1,6 +1,8 @@
 # Score Predictor
 
 ![App Logo](./images/logo.png)
+![App Logo](https://github.com/isherous/score_predictor/blob/main/images/logo.png)
+
 
 ## Description
 **Get Ready for Euro Cup**
