@@ -5,7 +5,6 @@ import 'package:provider/provider.dart';
 
 import '../Constants/colors.dart';
 import '../Constants/values.dart';
-import '../Providers/AuthProvider.dart';
 import '../Providers/MainProvider.dart';
 
 class AuthScaffold extends StatelessWidget {

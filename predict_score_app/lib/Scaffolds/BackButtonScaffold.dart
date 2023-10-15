@@ -34,13 +34,15 @@ class BackButtonScaffold extends StatelessWidget {
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(kToolbarHeight),
           child: Container(
-            decoration: const BoxDecoration(boxShadow: [
-              BoxShadow(
-                color: kBorderBlack,
-                offset: Offset(0, 2.0),
-                blurRadius: 0.0,
-              )
-            ]),
+            decoration: const BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: kBorderBlack,
+                  offset: Offset(0, 2.0),
+                  blurRadius: 0.0,
+                )
+              ],
+            ),
             child: AppBar(
               backgroundColor: kBlack,
               elevation: 1,

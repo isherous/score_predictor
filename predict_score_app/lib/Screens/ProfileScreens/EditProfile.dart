@@ -4,17 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:predict_score_app/Constants/colors.dart';
 import 'package:predict_score_app/Constants/values.dart';
-import 'package:predict_score_app/Providers/AuthProvider.dart';
-import 'package:predict_score_app/Providers/MainProvider.dart';
 import 'package:predict_score_app/Scaffolds/BackButtonScaffold.dart';
-import 'package:predict_score_app/Services/CommonServices.dart';
-import 'package:predict_score_app/Widgets/TextFields/TextFieldWidget.dart';
-import 'package:provider/provider.dart';
-import 'package:permission_handler/permission_handler.dart';
 
 import '../../Constants/styles.dart';
+import '../../Widgets/TextFields/TextFieldWidget.dart';
 import '../../Widgets/TextFields/UnderlineTextField.dart';
 
 class EditProfile extends StatefulWidget {
@@ -27,8 +23,6 @@ class EditProfile extends StatefulWidget {
 }
 
 class _EditProfileState extends State<EditProfile> {
-  final _commonServices = CommonServices();
-
   TextEditingController nameController = TextEditingController();
   TextEditingController twitterController = TextEditingController();
   TextEditingController instagramController = TextEditingController();
@@ -42,7 +36,6 @@ class _EditProfileState extends State<EditProfile> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    //_init();
   }
 
   @override
@@ -116,76 +109,13 @@ class _EditProfileState extends State<EditProfile> {
 
   @override
   Widget build(BuildContext context) {
-    MainProvider mainProvider = Provider.of<MainProvider>(context);
-    MainProvider mainProviderFalse =
-        Provider.of<MainProvider>(context, listen: false);
-
-    AuthProvider authProviderFalse =
-        Provider.of<AuthProvider>(context, listen: false);
-
     return BackButtonScaffold(
       title: "Edit Profile",
 
       ///Save FAB Button
       fab: FloatingActionButton.extended(
         backgroundColor: kDarkBlue,
-        onPressed: () async {
-          // ///Name and its validation
-          // String name = nameController.text.trim();
-          // if (name.isEmpty) {
-          //   _commonServices.showToast(
-          //       text: "Please fill your name", context: context);
-          //   return;
-          // }
-          //
-          // mainProviderFalse.changeShowProgress(true);
-          //
-          // ///Social Links
-          // String twitter = twitterController.text.trim();
-          // String instagram = instagramController.text.trim();
-          // String youtube = youtubeController.text.trim();
-          //
-          // ///Updating the UserClass
-          // UserClass newUserClass = widget.userClass;
-          // newUserClass.name = _name;
-          // newUserClass.socialLinks = {
-          //   "twitter": _twitter,
-          //   "instagram": _instagram,
-          //   "youtube": _youtube,
-          // };
-          //
-          // ///Uploading the image
-          // if (imagePicked != null) {
-          //   bool _result = await _storageServices.uploadUserImage(imagePicked!);
-          //
-          //   ///If image cannot be uploaded
-          //   if (!_result) {
-          //     _commonServices.showToast(
-          //         text: "There was an error uploading the image",
-          //         context: context);
-          //   }
-          // }
-          //
-          // ///Updating the user display name
-          // await authProviderFalse.updateDisplayNameOfUser(_name);
-          //
-          //
-          // ///Updating Profile
-          // bool result = await _databaseServices.updateProfile(newUserClass);
-          // mainProviderFalse.changeShowProgress(false);
-          //
-          // ///If Profile is successfully updated
-          // if (result) {
-          //   Navigator.pop(context);
-          // }
-          //
-          // ///If profile fails to update
-          // else {
-          //   _commonServices.showToast(
-          //       text: "There was an error updating your profile",
-          //       context: context);
-          // }
-        },
+        onPressed: () {},
         label: Padding(
           padding: const EdgeInsets.all(18.0),
           child: Text("Save", style: k15Medium),
@@ -203,11 +133,6 @@ class _EditProfileState extends State<EditProfile> {
             Center(
               child: InkWell(
                 onTap: () async {
-                  ///Mixpanel
-                  // _mixpanelServices.trackTapOnScreen(
-                  //     widgetName: "Profile Picture",
-                  //     screenName: "Edit Profile");
-
                   ///Checking if Photos permission is enabled
                   PermissionStatus status = await Permission.photos.status;
                   if (status.isRestricted || status.isPermanentlyDenied) {
@@ -229,10 +154,6 @@ class _EditProfileState extends State<EditProfile> {
             Center(
               child: InkWell(
                 onTap: () async {
-                  ///Mixpanel
-                  // _mixpanelServices.trackTapOnScreen(
-                  //     widgetName: "Select an image", screenName: "Edit Profile");
-
                   ///Selecting an image
                   ///Checking if Photos permission is enabled
                   PermissionStatus _status = await Permission.photos.status;

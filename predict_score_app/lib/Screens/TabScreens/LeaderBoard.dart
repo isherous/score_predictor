@@ -115,7 +115,7 @@ class SingleRank extends StatelessWidget {
           Expanded(
             flex: 7,
             child: Text(
-              "Shantanu",
+              "John Doe",
               style: k15Medium,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,

@@ -2,6 +2,7 @@ import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:predict_score_app/Scaffolds/TabsScaffold.dart';
 import 'package:predict_score_app/Screens/AuthScreens/AuthScreen.dart';
 import 'package:predict_score_app/Screens/AuthScreens/SignInScreen.dart';
@@ -10,14 +11,13 @@ import 'package:predict_score_app/Screens/Notifications.dart';
 import 'package:predict_score_app/Screens/ProfileScreens/AppSettings.dart';
 import 'package:predict_score_app/Screens/ProfileScreens/EditProfile.dart';
 import 'package:provider/provider.dart';
+
 import 'Constants/colors.dart';
-import 'Providers/AuthProvider.dart';
 import 'Providers/MainProvider.dart';
 import 'Screens/AuthScreens/ChangePasswordScreen.dart';
 import 'Screens/AuthScreens/ForgotPasswordScreen.dart';
 import 'Screens/AuthScreens/PhoneAuth.dart';
 import 'firebase_options.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 void main() {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -27,7 +27,7 @@ void main() {
     ),
   );
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+  //FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
   runApp(MyApp());
 }
@@ -49,7 +49,6 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => MainProvider()),
-        ChangeNotifierProvider(create: (_) => AuthProvider()),
       ],
       child: FutureBuilder(
         future: _initialization,

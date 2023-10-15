@@ -51,8 +51,6 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
           keyboardType: widget.keyboardType,
           obscureText: widget.isPassword && !showPassword,
           decoration: InputDecoration(
-            // labelText: widget.labelText,
-            // labelStyle: k13Medium.copyWith(color: kWhite.withOpacity(0.5)),
             suffixIcon: widget.isPassword
                 ? IconButton(
                     onPressed: () {

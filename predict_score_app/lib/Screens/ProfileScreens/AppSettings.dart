@@ -5,7 +5,6 @@ import 'package:provider/provider.dart';
 
 import '../../Constants/colors.dart';
 import '../../Constants/styles.dart';
-import '../../Providers/AuthProvider.dart';
 import '../../Providers/MainProvider.dart';
 import '../../Widgets/SettingsWidget.dart';
 import '../AuthScreens/AuthScreen.dart';
@@ -18,14 +17,7 @@ class AppSettings extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AuthProvider authProviderFalse =
-        Provider.of<AuthProvider>(context, listen: false);
-    AuthProvider authProvider = Provider.of<AuthProvider>(context);
-
-    MainProvider mainProvider = Provider.of<MainProvider>(context);
-    MainProvider mainProviderFalse =
-        Provider.of<MainProvider>(context, listen: false);
-
+    final mainProvider = context.watch<MainProvider>();
     return BackButtonScaffold(
       title: "App Settings",
       child: ListView(
@@ -33,13 +25,9 @@ class AppSettings extends StatelessWidget {
           const SizedBox(height: 12),
 
           ///Change Password
-          //if (authProviderFalse.isEmailLoggedIn)
           SettingsWidget(
             text: "Change Password",
             onTap: () {
-              authProviderFalse.currentPasswordController.clear();
-              authProviderFalse.newPasswordController.clear();
-              authProviderFalse.confirmPasswordController.clear();
               Navigator.pushNamed(context, ChangePassword.id);
             },
           ),
@@ -81,12 +69,9 @@ class AppSettings extends StatelessWidget {
                   if (value == true) {
                     final navigator = Navigator.of(context);
 
-                    //_cloudFunctionsServices.deleteAccount(context);
-                    mainProviderFalse.changeShowProgress(true);
+                    mainProvider.changeShowProgress(true);
                     await Future.delayed(const Duration(milliseconds: 1000));
-                    mainProviderFalse.changeShowProgress(false);
-                    authProviderFalse.signOut();
-                    //_cloudFunctionsServices.deleteAccount(context);
+                    mainProvider.changeShowProgress(false);
                     navigator.pushNamedAndRemoveUntil(
                         AuthScreen.id, (Route<dynamic> route) => false);
                   }
@@ -100,8 +85,6 @@ class AppSettings extends StatelessWidget {
             text: "Log Out",
             onTap: () async {
               final navigator = Navigator.of(context);
-
-              await authProviderFalse.signOut();
               navigator.pushNamedAndRemoveUntil(
                   AuthScreen.id, (Route<dynamic> route) => false);
             },

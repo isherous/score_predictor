@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart' show DateFormat;
 import 'package:predict_score_app/Constants/colors.dart';
 import 'package:predict_score_app/Constants/styles.dart';
-import 'package:predict_score_app/Providers/MainProvider.dart';
-import 'package:provider/provider.dart';
 
 import '../../Widgets/SingleMatchWidget.dart';
-import 'package:intl/intl.dart' show DateFormat;
 
 class HomeTab extends StatefulWidget {
   HomeTab({Key? key}) : super(key: key);
@@ -29,29 +27,21 @@ class _HomeTabState extends State<HomeTab> {
     _initializingTheBorderWidths();
   }
 
-  _initializingTheBorderWidths(){
+  _initializingTheBorderWidths() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       RenderBox matchesBox =
-      matchesKey.currentContext?.findRenderObject() as RenderBox;
+          matchesKey.currentContext?.findRenderObject() as RenderBox;
       matchesWidth = matchesBox.size.width;
 
       RenderBox predictionsBox =
-      predictionsKey.currentContext?.findRenderObject() as RenderBox;
+          predictionsKey.currentContext?.findRenderObject() as RenderBox;
       predictionsWidth = predictionsBox.size.width;
-      setState(() {
-      });
+      setState(() {});
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    MainProvider mainProvider = Provider.of<MainProvider>(context);
-
-    MainProvider mainProviderFalse =
-        Provider.of<MainProvider>(context, listen: false);
-
-    //int topBarIndex = mainProvider.topBarIndex;
-
     final today = DateTime.now();
 
     return Padding(
@@ -75,7 +65,6 @@ class _HomeTabState extends State<HomeTab> {
                       setState(() {
                         topBarIndex = 0;
                       });
-                      //mainProviderFalse.changeTopBarIndex(0);
                     },
                     child: AnimatedOpacity(
                       curve: Curves.easeInOut,
@@ -101,7 +90,6 @@ class _HomeTabState extends State<HomeTab> {
                       setState(() {
                         topBarIndex = 1;
                       });
-                      //mainProviderFalse.changeTopBarIndex(1);
                     },
                     child: AnimatedOpacity(
                       curve: Curves.easeInOut,
