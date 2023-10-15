@@ -20,11 +20,9 @@ Predict Scores and climb the Leaderboard
 
 ## Screenshots
 
-<img src="https://firebasestorage.googleapis.com/v0/b/the-score-predictor.appspot.com/o/image1.png?alt=media&token=50854592-c4c6-49cb-8f8f-642ab443380c&_gl=1*1otmca5*_ga*MTY0NzE1NjYyMi4xNjk3NDAyNjM1*_ga_CW55HF8NVT*MTY5NzQwMjYzNS4xLjEuMTY5NzQwMjk3MS42MC4wLjA." width="620" height="800">
-
-![Screenshot 1|320x271](https://firebasestorage.googleapis.com/v0/b/the-score-predictor.appspot.com/o/image1.png?alt=media&token=50854592-c4c6-49cb-8f8f-642ab443380c&_gl=1*1otmca5*_ga*MTY0NzE1NjYyMi4xNjk3NDAyNjM1*_ga_CW55HF8NVT*MTY5NzQwMjYzNS4xLjEuMTY5NzQwMjk3MS42MC4wLjA.)
-![Screenshot 2|320x271](https://firebasestorage.googleapis.com/v0/b/the-score-predictor.appspot.com/o/image2.png?alt=media&token=65c2a298-a029-4de0-8e63-2d230d7ccee9&_gl=1*1iklhl2*_ga*MTY0NzE1NjYyMi4xNjk3NDAyNjM1*_ga_CW55HF8NVT*MTY5NzQwMjYzNS4xLjEuMTY5NzQwMjk3My41OC4wLjA.)
-![Screenshot 3|320x271](https://firebasestorage.googleapis.com/v0/b/the-score-predictor.appspot.com/o/image3.png?alt=media&token=c2c69df0-c02f-46ce-9dc9-92a0c9bd41bc&_gl=1*v6n549*_ga*MTY0NzE1NjYyMi4xNjk3NDAyNjM1*_ga_CW55HF8NVT*MTY5NzQwMjYzNS4xLjEuMTY5NzQwMjk3NS41Ni4wLjA.)
+![Screenshot 1](https://firebasestorage.googleapis.com/v0/b/the-score-predictor.appspot.com/o/2%20-A.png?alt=media&token=b14dfca2-845a-4af6-8aff-1244e4e58422&_gl=1*11l96g9*_ga*MTY0NzE1NjYyMi4xNjk3NDAyNjM1*_ga_CW55HF8NVT*MTY5NzQwMjYzNS4xLjEuMTY5NzQwMzUyNi4zOS4wLjA.)
+![Screenshot 2](https://firebasestorage.googleapis.com/v0/b/the-score-predictor.appspot.com/o/2%20-%20B.png?alt=media&token=be4e4cf1-4dd2-4c77-8b90-6cc04a4d0d94&_gl=1*6a56zg*_ga*MTY0NzE1NjYyMi4xNjk3NDAyNjM1*_ga_CW55HF8NVT*MTY5NzQwMjYzNS4xLjEuMTY5NzQwMzUyOS4zNi4wLjA.)
+![Screenshot 3](https://firebasestorage.googleapis.com/v0/b/the-score-predictor.appspot.com/o/2%20-%20C.png?alt=media&token=a364932e-21dd-4128-a3d9-07f089ac4ab8&_gl=1*cdptsv*_ga*MTY0NzE1NjYyMi4xNjk3NDAyNjM1*_ga_CW55HF8NVT*MTY5NzQwMjYzNS4xLjEuMTY5NzQwMzUzMS4zNC4wLjA.)
 
 ## Test it yourself
 
