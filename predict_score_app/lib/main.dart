@@ -35,10 +35,11 @@ void main() {
 class MyApp extends StatelessWidget {
   MyApp({super.key});
 
-  final Future<FirebaseApp> _initialization = Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  ///Firebase
+  final Future<FirebaseApp> _initialization =
+      Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
+  ///Analytics
   static FirebaseAnalytics analytics = FirebaseAnalytics.instance;
   static FirebaseAnalyticsObserver observer =
       FirebaseAnalyticsObserver(analytics: analytics);
@@ -84,8 +85,8 @@ class MyApp extends StatelessWidget {
                 NotificationsScreen.id: (context) => NotificationsScreen(),
               },
               title: 'Score Predictor',
-              initialRoute: AuthScreen.id,
               navigatorObservers: <NavigatorObserver>[observer],
+              initialRoute: AuthScreen.id,
             );
           }
           return Container(color: kBlack);
