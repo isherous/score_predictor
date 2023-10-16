@@ -2,7 +2,7 @@
 
 ![App Logo](https://firebasestorage.googleapis.com/v0/b/the-score-predictor.appspot.com/o/logo.png?alt=media&token=23bd910d-9168-497c-885e-d12b4ee02c58&_gl=1*6pci7z*_ga*MTY0NzE1NjYyMi4xNjk3NDAyNjM1*_ga_CW55HF8NVT*MTY5NzQwMjYzNS4xLjEuMTY5NzQwMjgwMC40MC4wLjA.)
 
-# Website 
+## Website 
 
 [Website Link](https://the-score-predictor.web.app/)
 
